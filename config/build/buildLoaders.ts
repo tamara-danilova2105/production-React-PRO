@@ -8,16 +8,16 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         use: ['@svgr/webpack'],
     };
 
-    const babelLoader =  {
+    const babelLoader = {
         test: /\.(js|jsx|tsx)$/,
         exclude: /node_modules/,
         use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
-                presets: ['@babel/preset-env']
-            }
-        }
-    }
+                presets: ['@babel/preset-env'],
+            },
+        },
+    };
 
     const cssLoader = {
         test: /\.s[ac]ss$/i,

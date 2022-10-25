@@ -1,5 +1,5 @@
-import React, { ReactNode, Suspense } from 'react';
-import { ErrorInfo } from "react";
+import React, { ReactNode, Suspense, ErrorInfo } from 'react';
+
 import { PageError } from 'widgets/PageError/ui/PageError';
 // import { withTranslation } from 'react-i18next';
 
@@ -26,17 +26,17 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
     }
 
     render() {
-        const { hasError } = this.state
-        const { children } = this.props
+        const { hasError } = this.state;
+        const { children } = this.props;
         if (hasError) {
             return (
-                <Suspense fallback=''>
+                <Suspense fallback="">
                     <PageError />
                 </Suspense>
-            ) 
+            );
         }
-    
-        return children
+
+        return children;
     }
 }
 
