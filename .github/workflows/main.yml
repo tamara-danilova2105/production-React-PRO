@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 jobs:
   check-bats-version:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -25,6 +25,6 @@ jobs:
         run: npm run test:unit
       - name: build storybook
         run: npm run storybook:build
-      # - name: screenshot testing
-      #   run: npm run test:ui:ci
+      - name: screenshot testing
+        run: npm run test:ui:ci
 
