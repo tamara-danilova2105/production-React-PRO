@@ -9,6 +9,9 @@
     "Oпрокинуть ошибку": "throw error",
     "переключить": "toggle",
     "Войти": "Login",
+    "Выйти": "Logout",
     "пользователь": "username",
-    "пароль": "password"
+    "пароль": "password",
+    "Форма авторизации": "Authorization form",
+    "неверный логин и пароль": "Uncorrect username or password"
 }

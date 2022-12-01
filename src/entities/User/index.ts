@@ -1,3 +1,7 @@
+export { 
+    getUserAuthData 
+} from './modal/selectors/getUserAuthData/getUserAuthData';
+
 export {
     userSlice,
     userActions,
