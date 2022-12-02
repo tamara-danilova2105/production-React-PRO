@@ -1,5 +1,4 @@
 import { getLoginState } from 'features/AuthByUsername/modal/selectors/getLoginState/getLoginState';
-import { loginByUserName } from '../../modal/services/loginByUserName/loginByUserName';
 import { loginActions } from 'features/AuthByUsername/modal/slice/loginSlice';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -7,8 +6,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
-import cls from './LoginForm.module.scss';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import i18n from 'shared/config/i18n/i18n';
+import cls from './LoginForm.module.scss';
+import { loginByUserName } from '../../modal/services/loginByUserName/loginByUserName';
 
 interface LoginFormProps {
     className?: string;
@@ -17,24 +18,26 @@ interface LoginFormProps {
 export const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
-    const { username, password, error, isLoading } = useSelector(getLoginState);
+    const {
+        username, password, error, isLoading,
+    } = useSelector(getLoginState);
 
     const onChangeUserName = useCallback((value: string) => {
-        dispatch(loginActions.setUsername(value))
+        dispatch(loginActions.setUsername(value));
     }, [dispatch]);
 
     const onChangePassword = useCallback((value: string) => {
-        dispatch(loginActions.setPassword(value))
+        dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
     const onLoginClick = useCallback(() => {
-        dispatch(loginByUserName({username, password}))
-    }, [dispatch, username, password])
+        dispatch(loginByUserName({ username, password }));
+    }, [dispatch, username, password]);
 
     return (
         <div className={classNames(cls.LoginForm, {}, [className])}>
             <Text title={t('Форма авторизации')} />
-            {error && <Text text={error} theme={TextTheme.ERROR} />}
+            {error && <Text text={i18n.t('неверный логин и пароль')} theme={TextTheme.ERROR} />}
             <Input
                 autoFocus
                 type="text"

@@ -17,7 +17,7 @@ export const loginSlice = createSlice({
         },
         setPassword: (state, action: PayloadAction<string>) => {
             state.password = action.payload;
-        }
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -31,8 +31,8 @@ export const loginSlice = createSlice({
             .addCase(loginByUserName.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
-            })
-        },
+            });
+    },
 });
 
 export const { actions: loginActions } = loginSlice;

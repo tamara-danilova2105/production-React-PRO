@@ -41,20 +41,16 @@ PrimaryDark.args = {
     title: 'Title lorem ipsun',
     text: 'Description Description Description',
 };
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)]
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const onlyTitleDark = Template.bind({});
 onlyTitleDark.args = {
     title: 'Title lorem ipsun',
 };
-onlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)]
+onlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const onlyTextDark = Template.bind({});
 onlyTextDark.args = {
     text: 'Description Description Description',
 };
-onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)]
-
-
-
-
+onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];

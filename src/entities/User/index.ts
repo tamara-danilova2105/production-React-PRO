@@ -1,5 +1,5 @@
-export { 
-    getUserAuthData 
+export {
+    getUserAuthData,
 } from './modal/selectors/getUserAuthData/getUserAuthData';
 
 export {
