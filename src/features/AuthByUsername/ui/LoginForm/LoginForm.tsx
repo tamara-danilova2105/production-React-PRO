@@ -1,26 +1,41 @@
-import { getLoginState } from 'features/AuthByUsername/modal/selectors/getLoginState/getLoginState';
-import { loginActions } from 'features/AuthByUsername/modal/slice/loginSlice';
-import { memo, useCallback } from 'react';
+import { loginActions, loginReducer } from 'features/AuthByUsername/modal/slice/loginSlice';
+import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import i18n from 'shared/config/i18n/i18n';
+import { ReduxStoreWithManager } from 'app/providers/StoreProvider/config/StateSchema';
 import cls from './LoginForm.module.scss';
 import { loginByUserName } from '../../modal/services/loginByUserName/loginByUserName';
+import { getLoginUsername } from '../../modal/selectors/getLoginUsername/getLoginUsername';
+import { getLoginPassword } from '../../modal/selectors/getLoginPassword/getLoginPassword';
+import { getLoginIsLoading } from '../../modal/selectors/getLoginLoading/getLoginLoading';
+import { getLoginError } from '../../modal/selectors/getLoginError/getLoginError';
 
-interface LoginFormProps {
+export interface LoginFormProps {
     className?: string;
 }
 
-export const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
-    const {
-        username, password, error, isLoading,
-    } = useSelector(getLoginState);
+    const store = useStore() as ReduxStoreWithManager;
+
+    const username = useSelector(getLoginUsername);
+    const password = useSelector(getLoginPassword);
+    const isLoading = useSelector(getLoginIsLoading);
+    const error = useSelector(getLoginError);
+
+    useEffect(() => {
+        store.reducerManager.add('loginForm', loginReducer);
+
+        return () => {
+            store.reducerManager.remove('loginForm');
+        };
+    }, []);
 
     const onChangeUserName = useCallback((value: string) => {
         dispatch(loginActions.setUsername(value));
@@ -64,3 +79,5 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
         </div>
     );
 });
+
+export default LoginForm;
