@@ -57,7 +57,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                 <Text title={t('Форма авторизации')} />
                 {error && <Text text={i18n.t('неверный логин и пароль')} theme={TextTheme.ERROR} />}
                 <Input
-                    autoFocus
+                    autofocus
                     type="text"
                     className={cls.input}
                     placeholder={t('пользователь')}
@@ -81,7 +81,6 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                 </Button>
             </div>
         </DynamicModuleLoader>
-
     );
 });
 

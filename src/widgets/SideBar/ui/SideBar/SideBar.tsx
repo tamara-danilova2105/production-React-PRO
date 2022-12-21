@@ -9,6 +9,8 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import AboutIcon from 'shared/assets/icons/about.svg';
 import MainIcon from 'shared/assets/icons/main.svg';
 import cls from './SideBar.module.scss';
+import { SideBarItemsList } from '../../module/item';
+import { SideBarItem } from '../SideBarItem/SideBarItem';
 
 interface SideBarProps {
     className?: string;
@@ -41,28 +43,13 @@ export const SideBar = ({ className }: SideBarProps) => {
 
             <div>
                 <div className={cls.items}>
-                    <AppLink
-                        theme={AppLinkTheme.SECONDARY}
-                        to={RoutePath.main}
-                        className={cls.item}
-                    >
-                        <MainIcon className={cls.icon} />
-                        <span className={cls.link}>
-                            {t('Главная')}
-                        </span>
-                    </AppLink>
-                </div>
-                <div className={cls.items}>
-                    <AppLink
-                        theme={AppLinkTheme.SECONDARY}
-                        to={RoutePath.about}
-                        className={cls.item}
-                    >
-                        <AboutIcon className={cls.icon} />
-                        <span className={cls.link}>
-                            {t('О сайте')}
-                        </span>
-                    </AppLink>
+                    {SideBarItemsList.map((item) => (
+                        <SideBarItem 
+                            key={item.path}
+                            item={item}
+                            collapsed={collapsed}
+                        />
+                    ))}
                 </div>
             </div>
 
