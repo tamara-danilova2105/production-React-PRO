@@ -8,13 +8,13 @@ import { Input } from 'shared/ui/Input/Input';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import i18n from 'shared/config/i18n/i18n';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModeleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './LoginForm.module.scss';
 import { loginByUserName } from '../../modal/services/loginByUserName/loginByUserName';
 import { getLoginUsername } from '../../modal/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../modal/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../modal/selectors/getLoginLoading/getLoginLoading';
 import { getLoginError } from '../../modal/selectors/getLoginError/getLoginError';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export interface LoginFormProps {
     className?: string;

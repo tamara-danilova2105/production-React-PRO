@@ -1,9 +1,9 @@
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import cls from './SideBarItem.module.scss';
 import { useTranslation } from 'react-i18next';
-import { SideBarItemType } from '../../module/item';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { SideBarItemType } from '../../module/item';
+import cls from './SideBarItem.module.scss';
 
 interface SideBarItemProps {
     item?: SideBarItemType;
@@ -11,14 +11,13 @@ interface SideBarItemProps {
 }
 
 export const SideBarItem = memo(({ item, collapsed }: SideBarItemProps) => {
-
     const { t } = useTranslation();
 
     return (
         <AppLink
             theme={AppLinkTheme.SECONDARY}
             to={item.path}
-            className={classNames(cls.item, {[cls.collapsed]: collapsed})}
+            className={classNames(cls.item, { [cls.collapsed]: collapsed })}
         >
             <item.Icon className={cls.icon} />
             <span className={cls.link}>

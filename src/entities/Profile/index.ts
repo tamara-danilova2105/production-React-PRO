@@ -6,4 +6,4 @@ export {
 export {
     profileActions,
     profileReducer,
-} from './model/slice/profileSlice'
+} from './model/slice/profileSlice';
