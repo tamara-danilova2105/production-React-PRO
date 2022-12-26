@@ -1,16 +1,16 @@
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { memo } from 'react';
-import { SideBarItemType } from '../../module/item';
-import cls from './SideBarItem.module.scss';
+import { classNames } from 'shared/lib/classNames/classNames';
+import cls from './SidebarItem.module.scss';
+import { SideBarItemType } from 'widgets/SideBar/module/item';
 
-interface SideBarItemProps {
-    item?: SideBarItemType;
+interface SidebarItemProps {
+    item: SideBarItemType;
     collapsed: boolean;
 }
 
-export const SideBarItem = memo(({ item, collapsed }: SideBarItemProps) => {
+export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
     const { t } = useTranslation();
 
     return (

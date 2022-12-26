@@ -5,7 +5,7 @@ import { ThemeSwitchers } from 'widgets/ThemeSwitcher';
 import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button';
 import cls from './SideBar.module.scss';
 import { SideBarItemsList } from '../../module/item';
-import { SideBarItem } from '../SideBarItem/SideBarItem';
+import { SidebarItem } from '../SideBarItem/SideBarItem';
 
 interface SideBarProps {
     className?: string;
@@ -19,7 +19,7 @@ export const SideBar = memo(({ className }: SideBarProps) => {
     );
 
     const itemsList = useMemo(() => SideBarItemsList.map((item) => (
-        <SideBarItem
+        <SidebarItem
             item={item}
             collapsed={collapsed}
             key={item.path}
