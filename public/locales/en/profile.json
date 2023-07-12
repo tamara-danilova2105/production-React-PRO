@@ -17,5 +17,10 @@
     "Беларусь": "Belarus",
     "Украина": "Ukraine",
     "Казахстан": "Kazakhstan",
-    "Армения": "Armenia"
+    "Армения": "Armenia",
+    "серверная ошибка": "Server error",
+    "неккоректный регион": "Incorrect region",
+    "данные не указаны": "Data is not specified",
+    "имя и фамилия обязательное поле": "First and last name required field",
+    "некорректный возраст": "Incorrect age"
 }
