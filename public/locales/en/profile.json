@@ -8,5 +8,14 @@
     "отменить": "Cancel",
     "сохранить": "Save",
     "ваш возраст": "Your age",
-    "ваш город": "Your city"
+    "ваш город": "Your city",
+    "имя пользователя": "Username",
+    "ссылка на аватар": "Link to the avatar",
+    "укажите валюту": "Specify the currency",
+    "укажите страну": "Specify the country",
+    "Россия": "Russia",
+    "Беларусь": "Belarus",
+    "Украина": "Ukraine",
+    "Казахстан": "Kazakhstan",
+    "Армения": "Armenia"
 }
