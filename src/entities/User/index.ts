@@ -3,8 +3,12 @@ export {
 } from './modal/selectors/getUserAuthData/getUserAuthData';
 
 export {
-    userSlice,
+    getUserInited,
+} from './modal/selectors/getUserInited/getUserInited'
+
+export {
     userActions,
+    userReducer,
 } from './modal/slice/userSlice';
 
 export {
