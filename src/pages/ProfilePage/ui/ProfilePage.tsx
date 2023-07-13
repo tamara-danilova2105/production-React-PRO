@@ -16,10 +16,10 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModeleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -44,10 +44,12 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         [ValidateProfileError.NO_DATA]: t('данные не указаны'),
         [ValidateProfileError.INCORRECT_USER_DATA]: t('имя и фамилия обязательное поле'),
         [ValidateProfileError.INCORRECT_AGE]: t('некорректный возраст'),
-    }
+    };
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const onChangeFirstName = useCallback((value?: string) => {
@@ -89,7 +91,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         >
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
-                {validateErrors?.length && validateErrors.map(error => (
+                {validateErrors?.length && validateErrors.map((error) => (
                     <Text
                         key={error}
                         theme={TextTheme.ERROR}

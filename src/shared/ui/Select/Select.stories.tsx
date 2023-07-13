@@ -17,6 +17,5 @@ Primary.args = {
     options: [
         { value: '123', content: 'пункт 1' },
         { value: '124', content: 'пункт 2' },
-    ]
+    ],
 };
-

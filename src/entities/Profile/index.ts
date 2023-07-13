@@ -13,8 +13,8 @@ export {
     fetchProfileData,
 } from './model/services/fetchProfileData/fetchProfileData';
 
-export { 
-    updateProfileData 
+export {
+    updateProfileData,
 } from './model/services/updateProfileData/updateProfileData';
 
 export {

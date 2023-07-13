@@ -3,12 +3,12 @@ import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { Input } from 'shared/ui/Input/Input';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Loader } from 'shared/ui/Loader/Loader';
-import cls from './ProfileCard.module.scss';
-import { Profile } from '../../model/types/profile';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country } from 'entities/Country/model/types/country';
 import { CountrySelect } from 'entities/Country';
+import { Profile } from '../../model/types/profile';
+import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
     className?: string;
@@ -68,16 +68,18 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     const mods: Mods = {
         [cls.editing]: !readonly,
-    }
+    };
 
     return (
         <div className={classNames(cls.ProfileCard, mods, [className])}>
             <div className={cls.data}>
                 {
-                    data?.avatar &&
-                    <div className={cls.avatarWrapper}>
-                        <Avatar src={data?.avatar} />
-                    </div>
+                    data?.avatar
+                    && (
+                        <div className={cls.avatarWrapper}>
+                            <Avatar src={data?.avatar} />
+                        </div>
+                    )
                 }
                 <Input
                     value={data?.first}
