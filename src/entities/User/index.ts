@@ -4,7 +4,7 @@ export {
 
 export {
     getUserInited,
-} from './modal/selectors/getUserInited/getUserInited'
+} from './modal/selectors/getUserInited/getUserInited';
 
 export {
     userActions,

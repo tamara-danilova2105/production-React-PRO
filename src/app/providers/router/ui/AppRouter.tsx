@@ -30,4 +30,3 @@ const AppRouter = () => {
 };
 
 export default memo(AppRouter);
-
