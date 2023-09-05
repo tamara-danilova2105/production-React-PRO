@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Profile } from '../../types/profile';
