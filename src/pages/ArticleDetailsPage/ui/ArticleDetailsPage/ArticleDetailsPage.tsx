@@ -1,7 +1,6 @@
-/* eslint-disable linebreak-style */
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text/Text';
@@ -15,6 +14,8 @@ import { fetchCommentsByArticleId } from
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
+import AddCommentForm from 'features/addCommentForm/ui/addCommentForm/AddCommentForm';
+import { addCommentFormArticle } from 'pages/ArticleDetailsPage/model/services/addCommentFormArticle/addCommentFormArticle';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -32,6 +33,10 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const commentIsLoading = useSelector(getArticleCommentsIsLoading);
     const dispatch = useAppDispatch();
 
+    const onSendComment = useCallback((text: string) => {
+        dispatch(addCommentFormArticle(text));
+    }, [dispatch]);
+
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
     });
@@ -48,7 +53,13 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetails id={id} />
-                <Text className={cls.commentTitle} title={t('комментарии')} />
+                <Text
+                    className={cls.commentTitle}
+                    title={t('комментарии')}
+                />
+                <AddCommentForm
+                    onSendComment={onSendComment}
+                />
                 <CommentList
                     isLoading={commentIsLoading}
                     comments={comments}

@@ -2,5 +2,7 @@
     "статья не найдена": "Article not found",
     "Произошла ошибка при загрузке страницы": "An error occurred while loading the page",
     "комментарии": "Comments",
-    "комментарии отсутствуют": "There are no comments"
+    "комментарии отсутствуют": "There are no comments",
+    "введите текст комментария": "Enter the comment text",
+    "отправить": "Send"
 }

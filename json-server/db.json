@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,36 @@
       "text": "some comment 3",
       "articlesId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "1111",
+      "id": "UVcJBZJ"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "ymjMmtw"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "aaaaa",
+      "id": "MhElKAt"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "привет",
+      "id": "iMqKgs3"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "hello",
+      "id": "c6Ncao-"
     }
   ],
   "users": [
@@ -115,17 +147,31 @@
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://img5.goodfon.ru/original/6016x4016/4/de/pink-background-pose-charming-woman-brown-eyes-bright-manicu.jpg"
+      "avatar": "https://sun9-65.userapi.com/impg/lpENQw-cOa3dUZgSsBFbzPYbVKOclBn5mdd4Ig/8ITLQlkIDHU.jpg?size=200x477&quality=96&sign=dc366415856392a03a27f91291ff037a&type=album"
     }
   ],
-  "profile": {
-    "first": "Тамара",
-    "lastname": "Данилова",
-    "age": 99,
-    "currency": "RUB",
-    "country": "Беларусь",
-    "city": "Ижевск",
-    "username": "admin",
-    "avatar": "https://a.allegroimg.com/s1024/0c3940/b1a1e50348c8a6839b86708c6f38"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Тамара",
+      "lastname": "Данилова",
+      "age": 100,
+      "currency": "RUB",
+      "country": "Россия",
+      "city": "Ижевск",
+      "username": "admin",
+      "avatar": "https://a.allegroimg.com/s1024/0c3940/b1a1e50348c8a6839b86708c6f38"
+    },
+    {
+      "id": "2",
+      "first": "Егор",
+      "lastname": "Зорин",
+      "age": 21,
+      "currency": "RUB",
+      "country": "Россия",
+      "city": "Ижевск",
+      "username": "user",
+      "avatar": "https://sun9-65.userapi.com/impg/lpENQw-cOa3dUZgSsBFbzPYbVKOclBn5mdd4Ig/8ITLQlkIDHU.jpg?size=200x477&quality=96&sign=dc366415856392a03a27f91291ff037a&type=album"
+    }
+  ]
 }

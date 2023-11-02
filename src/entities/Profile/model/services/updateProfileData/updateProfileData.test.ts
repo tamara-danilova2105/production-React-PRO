@@ -12,6 +12,7 @@ const data = {
     first: 'Tamara',
     city: 'Izhevsk',
     currency: Currency.USD,
+    id: '1',
 };
 
 describe('updateProfileData.test', () => {
