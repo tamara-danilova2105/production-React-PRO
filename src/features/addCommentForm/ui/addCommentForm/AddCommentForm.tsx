@@ -1,14 +1,14 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import cls from './AddCommentForm.module.scss';
 import { Input } from 'shared/ui/Input/Input';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
-import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModeleLoader/DynamicModuleLoader';
+import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
+import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice';
+import cls from './AddCommentForm.module.scss';
 
 export interface AddCommentFormProps {
     className?: string;
@@ -17,7 +17,7 @@ export interface AddCommentFormProps {
 
 const reducers: ReducersList = {
     addCommentForm: addCommentFormReducer,
-}
+};
 
 const AddCommentForm = memo((props: AddCommentFormProps) => {
     const { className, onSendComment } = props;
@@ -33,7 +33,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     const onSendHandler = useCallback(() => {
         onSendComment(text || '');
         onCommentTextChange('');
-    }, [onCommentTextChange, onSendComment, text])
+    }, [onCommentTextChange, onSendComment, text]);
 
     return (
         <DynamicModuleLoader reducers={reducers}>

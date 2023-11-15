@@ -11,7 +11,9 @@ export const addCommentFormArticle = createAsyncThunk<
 >(
     'articleDatails/addCommentFormArticle',
     async (text, thunkApi) => {
-        const { extra, dispatch, rejectWithValue, getState } = thunkApi;
+        const {
+            extra, dispatch, rejectWithValue, getState,
+        } = thunkApi;
 
         const userData = getUserAuthData(getState());
         const article = getArticleDetailsData(getState());

@@ -29,7 +29,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
         );
     }
 
-    if(!comment) {
+    if (!comment) {
         return null;
     }
 
