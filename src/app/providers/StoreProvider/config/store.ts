@@ -8,6 +8,7 @@ import { userReducer } from 'entities/User/modal/slice/userSlice';
 import { $api } from 'shared/api/api';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
+import { uiReducer } from 'features/UI';
 
 export function createReduxStore(
     initialState?: StateSchema,
@@ -18,6 +19,7 @@ export function createReduxStore(
         ...asyncReducers,
         counter: counterReducers,
         user: userReducer,
+        ui: uiReducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);
