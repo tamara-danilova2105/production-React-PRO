@@ -16,5 +16,6 @@
     "пользователь": "username",
     "пароль": "password",
     "Форма авторизации": "Authorization form",
-    "неверный логин и пароль": "Uncorrect username or password"
+    "неверный логин и пароль": "Uncorrect username or password",
+    "создать статью": "create an article"
 }
