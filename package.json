@@ -89,6 +89,7 @@
     "@svgr/webpack": "^6.2.1",
     "axios": "^0.26.1",
     "concurrently": "^7.0.0",
+    "copy-webpack-plugin": "^10.2.4",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.3.0",
