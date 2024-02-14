@@ -34,11 +34,11 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
   const onLoadNextpart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
-  }, [dispatch])
+  }, [dispatch]);
 
   useInitialEffect(() => {
     dispatch(initArticlesPage(searchParams));
-  })
+  });
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
