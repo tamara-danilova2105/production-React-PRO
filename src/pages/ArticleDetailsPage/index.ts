@@ -4,4 +4,4 @@ export {
 
 export { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema';
 export { ArticleDetailsRecommendationsSchema } from './model/types/ArticleDetailsRecommendationSchema';
-export { ArticleDetailsPageSchema } from './model/types/index'
+export { ArticleDetailsPageSchema } from './model/types/index';

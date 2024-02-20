@@ -4,12 +4,12 @@ export function getQueryParams(params: OptionalRecord<string, string>) {
         if (value !== undefined) {
             searchParams.set(name, value);
         }
-    })
+    });
 
-    return `?${searchParams.toString()}`
+    return `?${searchParams.toString()}`;
 }
 
-//функция добавления параметров строки запроса в URL
+// функция добавления параметров строки запроса в URL
 export function addQueryParams(params: OptionalRecord<string, string>) {
     window.history.pushState(null, '', getQueryParams(params));
 }

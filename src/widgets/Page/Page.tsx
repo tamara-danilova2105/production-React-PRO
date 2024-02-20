@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { MutableRefObject, ReactNode, memo, useRef, UIEvent } from 'react';
-import cls from './Page.module.scss';
+import {
+    MutableRefObject, ReactNode, memo, useRef, UIEvent,
+} from 'react';
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUIScrollByPath, uiActions } from 'features/UI';
@@ -9,6 +10,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useSelector } from 'react-redux';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
+import cls from './Page.module.scss';
 
 interface PageProps {
     className?: string;
@@ -18,8 +20,8 @@ interface PageProps {
 
 export const Page = memo((props: PageProps) => {
     const { className, children, onScrollEnd } = props;
-    const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>
-    const triggerRef = useRef() as MutableRefObject<HTMLDivElement>
+    const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
+    const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
     const scrollPosition = useSelector(
@@ -34,7 +36,7 @@ export const Page = memo((props: PageProps) => {
 
     useInitialEffect(() => {
         wrapperRef.current.scrollTop = scrollPosition;
-    })
+    });
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
         dispatch(uiActions.setScrollPosition({
@@ -50,7 +52,7 @@ export const Page = memo((props: PageProps) => {
             onScroll={onScroll}
         >
             {children}
-            {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}          
+            {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
         </section>
     );
 });

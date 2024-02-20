@@ -1,11 +1,11 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
-import cls from './ArticleViewSelectors.module.scss';
-import { ArticleView } from '../../model/types/article';
 import ListIcon from 'shared/assets/icons/list-24-24.svg';
 import TiledIcon from 'shared/assets/icons/tiled-24-24.svg';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { ArticleView } from '../../model/types/article';
+import cls from './ArticleViewSelectors.module.scss';
 
 interface ArticleViewSelectorsProps {
     className?: string;
@@ -21,8 +21,8 @@ const viewTypes = [
     {
         view: ArticleView.BIG,
         icon: ListIcon,
-    }
-]
+    },
+];
 
 export const ArticleViewSelectors = memo((props: ArticleViewSelectorsProps) => {
     const { className, view, onViewClick } = props;
@@ -34,7 +34,7 @@ export const ArticleViewSelectors = memo((props: ArticleViewSelectorsProps) => {
     return (
         <div className={classNames(cls.ArticleViewSelectors, {}, [className])}>
             {
-                viewTypes.map(viewTupe => (
+                viewTypes.map((viewTupe) => (
                     <Button
                         key={viewTupe.view}
                         theme={ThemeButton.CLEAR}

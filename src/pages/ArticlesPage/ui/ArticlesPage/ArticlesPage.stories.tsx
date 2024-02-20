@@ -23,8 +23,8 @@ const article: Article = {
     createdAt: '26.02.2022',
     type: [ArticleType.IT],
     user: {
-        id: "1",
-        username: "Tamara Danilova",
+        id: '1',
+        username: 'Tamara Danilova',
     },
     blocks: [
         {

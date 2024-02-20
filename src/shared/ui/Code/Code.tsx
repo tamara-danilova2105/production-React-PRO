@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ReactNode, memo, useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import CopyIcon from 'shared/assets/icons/copy-20-20.svg';
 import cls from './Code.module.scss';
 import { Button, ThemeButton } from '../Button/Button';

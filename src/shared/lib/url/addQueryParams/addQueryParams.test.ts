@@ -1,24 +1,24 @@
-import { getQueryParams } from "./addQueryParams";
+import { getQueryParams } from './addQueryParams';
 
-describe('shared/lib/url/addQeuryParams', function () {
+describe('shared/lib/url/addQeuryParams', () => {
     test('test with one param', () => {
         const params = getQueryParams({
-            test: 'value'
-        })
+            test: 'value',
+        });
         expect(params).toBe('?test=value');
     });
     test('test with multiple params', () => {
         const params = getQueryParams({
             test: 'value',
-            second: '2'
-        })
+            second: '2',
+        });
         expect(params).toBe('?test=value&second=2');
     });
     test('test with undefined', () => {
         const params = getQueryParams({
             test: 'value',
-            second: undefined
-        })
+            second: undefined,
+        });
         expect(params).toBe('?test=value');
     });
 });

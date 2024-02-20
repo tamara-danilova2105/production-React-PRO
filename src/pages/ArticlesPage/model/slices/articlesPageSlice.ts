@@ -4,12 +4,13 @@ import {
     createSlice,
 } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Article, ArticleView } from 'entities/Article';
+import {
+    Article, ArticleView, ArticleType, ArticlesSortField,
+} from 'entities/Article';
+import { ARTILES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
+import { SortOrder } from 'shared/types';
 import { ArticlesPageSchema } from '../types/articlesPageSchema';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
-import { ARTILES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
-import { ArticleType, ArticlesSortField } from 'entities/Article';
-import { SortOrder } from 'shared/types';
 
 const articlesAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
@@ -34,7 +35,7 @@ const articlesPageSlice = createSlice({
         sort: ArticlesSortField.CREATED,
         search: '',
         order: 'asc',
-        type: ArticleType.ALL
+        type: ArticleType.ALL,
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
@@ -56,12 +57,12 @@ const articlesPageSlice = createSlice({
         setSearch: (state, action: PayloadAction<string>) => {
             state.search = action.payload;
         },
-        initState: state => {
+        initState: (state) => {
             const view = localStorage.getItem(ARTILES_VIEW_LOCALSTORAGE_KEY) as ArticleView;
             state.view = view;
             state.limit = view === ArticleView.BIG ? 4 : 9;
             state._inited = true;
-        }
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -69,7 +70,7 @@ const articlesPageSlice = createSlice({
                 state.error = undefined;
                 state.isLoading = true;
 
-                if(action.meta.arg.replace) {
+                if (action.meta.arg.replace) {
                     articlesAdapter.removeAll(state);
                 }
             })
@@ -81,7 +82,7 @@ const articlesPageSlice = createSlice({
                 state.hasMore = action.payload.length >= state.limit;
 
                 if (action.meta.arg.replace) {
-                    articlesAdapter.setAll(state, action.payload)
+                    articlesAdapter.setAll(state, action.payload);
                 } else {
                     articlesAdapter.addMany(state, action.payload);
                 }
@@ -93,7 +94,7 @@ const articlesPageSlice = createSlice({
     },
 });
 
-export const { 
+export const {
     reducer: articlesPageReducer,
     actions: articlesPageActions,
 } = articlesPageSlice;

@@ -6,9 +6,9 @@ import { userReducer } from 'entities/User/modal/slice/userSlice';
 // import { To } from 'history';
 // import { NavigateOptions } from 'react-router-dom';
 import { $api } from 'shared/api/api';
+import { uiReducer } from 'features/UI';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
-import { uiReducer } from 'features/UI';
 
 export function createReduxStore(
     initialState?: StateSchema,
