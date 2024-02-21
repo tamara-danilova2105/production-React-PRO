@@ -7,7 +7,7 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
 import { getArticleDetailsData } from 'entities/Article/model/selectors/articlesDetails';
 import { getCanEditArticle } from '../../model/selectors/article';
-import cls from './ArticleDetailsPageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack/HStack/HStack';
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;
@@ -30,7 +30,7 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
     }, [navigate, article?.id]);
 
     return (
-        <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
+        <HStack max justify={'between'} className={classNames('', {}, [className])}>
             <Button
                 onClick={onBackToList}
                 theme={ThemeButton.OUTLINE}
@@ -42,7 +42,6 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
                 canEdid
                 && (
                     <Button
-                        className={cls.editBtn}
                         onClick={onEditArticle}
                         theme={ThemeButton.OUTLINE}
                     >
@@ -50,6 +49,6 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
                     </Button>
                 )
             }
-        </div>
+        </HStack>
     );
 });
