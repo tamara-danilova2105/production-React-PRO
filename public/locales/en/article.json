@@ -23,5 +23,6 @@
     "Рекомендуем": "We recommend it",
     "редактировать": "edit",
     "редактирование статьи c ID": "editing an article with an ID = ",
-    "создание новой статьи": "creating a new article"
+    "создание новой статьи": "creating a new article",
+    "Ошибка при загрузке статей": "Error when including articles"
 }
