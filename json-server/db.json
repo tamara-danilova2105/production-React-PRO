@@ -602,14 +602,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://a.allegroimg.com/s1024/0c3940/b1a1e50348c8a6839b86708c6f38"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
+      "avatar": "https://sun9-65.userapi.com/impg/lpENQw-cOa3dUZgSsBFbzPYbVKOclBn5mdd4Ig/8ITLQlkIDHU.jpg?size=200x477&quality=96&sign=dc366415856392a03a27f91291ff037a&type=album"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": ["MANAGER"],
       "avatar": "https://sun9-65.userapi.com/impg/lpENQw-cOa3dUZgSsBFbzPYbVKOclBn5mdd4Ig/8ITLQlkIDHU.jpg?size=200x477&quality=96&sign=dc366415856392a03a27f91291ff037a&type=album"
     }
   ],

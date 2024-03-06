@@ -6,6 +6,8 @@ export {
     getUserInited,
 } from './modal/selectors/getUserInited/getUserInited';
 
+export { isUserAdmin, isUserManager, getUserRoles } from './modal/selectors/roleSelectors';
+
 export {
     userActions,
     userReducer,
@@ -14,4 +16,5 @@ export {
 export {
     UserSchema,
     User,
+    UserRole,
 } from './modal/types/user';
