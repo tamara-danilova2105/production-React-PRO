@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { ReducersList } from 'shared/lib/components/DynamicModeleLoader/DynamicModuleLoader';
 import { VStack } from 'shared/ui/Stack/VStack/VStack';
 import { Page } from 'widgets/Page/Page';
-    '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+'../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
@@ -34,16 +34,14 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     }
 
     return (
-        <VStack gap="16">
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <VStack gap="16" max>
-                    <ArticleDetailsPageHeader />
-                    <ArticleDetails id={id} />
-                    <ArticleRecommendationsList />
-                    <ArticleDetailsComments id={id} />
-                </VStack>
-            </Page>
-        </VStack>
+        <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <VStack gap="16" max>
+                <ArticleDetailsPageHeader />
+                <ArticleDetails id={id} />
+                <ArticleRecommendationsList />
+                <ArticleDetailsComments id={id} />
+            </VStack>
+        </Page>
     );
 };
 

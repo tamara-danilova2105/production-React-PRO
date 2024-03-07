@@ -11,6 +11,7 @@ import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentFormArticle } from '../../model/services/addCommentFormArticle/addCommentFormArticle';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 
 interface ArticleDetailsCommentsProps {
     className?: string;
@@ -33,7 +34,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     });
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <VStack gap='16' max className={classNames('', {}, [className])}>
             <Text
                 size={TextSize.L}
                 title={t('комментарии')}
@@ -45,6 +46,6 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
                 isLoading={commentIsLoading}
                 comments={comments}
             />
-        </div>
+        </VStack>
     );
 });
