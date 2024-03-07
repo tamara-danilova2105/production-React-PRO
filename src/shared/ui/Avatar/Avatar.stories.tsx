@@ -3,7 +3,7 @@ import AvatarImg from 'shared/assets/test/storybook.jpg';
 import { Avatar } from './Avatar';
 
 export default {
-    title: 'widget/Avatar',
+    title: 'shered/Avatar',
     component: Avatar,
     argTypes: {
         backgroundColor: { control: 'color' },

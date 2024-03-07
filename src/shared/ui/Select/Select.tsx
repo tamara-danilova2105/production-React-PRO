@@ -30,11 +30,11 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
         onChange?.(e.target.value as T);
     };
 
-    const optionsList = useMemo(() => options?.map((opt) => (
+    const optionsList = useMemo(() => options?.map((opt, index) => (
         <option
             className={cls.option}
             value={opt.value}
-            key={opt.value}
+            key={index}
         >
             {opt.content}
         </option>

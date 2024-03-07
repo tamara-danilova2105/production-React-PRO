@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { AppLink, AppLinkTheme } from './AppLink';
 
 export default {
-    title: 'widget/AppLink',
+    title: 'shered/AppLink',
     component: AppLink,
     argTypes: {
         backgroundColor: { control: 'color' },
