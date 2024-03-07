@@ -13,8 +13,9 @@ export {
     userReducer,
 } from './modal/slice/userSlice';
 
-export {
+export { UserRole } from './modal/consts/consts';
+
+export type {
     UserSchema,
     User,
-    UserRole,
 } from './modal/types/user';
